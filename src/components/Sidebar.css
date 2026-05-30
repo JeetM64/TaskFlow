@@ -1,6 +1,6 @@
 .sidebar{
     width:240px;
-    height:100%;
+    min-height: calc(100vh - 70px);
 
     background:#7091E6;
 

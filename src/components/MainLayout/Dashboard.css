@@ -1,10 +1,7 @@
 .dashboard{
     flex:1;
-
     background:#EDE8F5;
-
     padding:40px;
-
     overflow-y:auto;
 }
 
@@ -91,6 +88,10 @@
     color:#3D52A0;
 }
 
+.task-input::placeholder{
+    color:#7091E6;
+}
+
 .task-buttons{
     display:flex;
     gap:14px;
@@ -98,17 +99,11 @@
 
 .add-btn,
 .cancel-btn,
-.delete-btn{
+.delete-btn,
+.complete-btn{
     border:none;
 
-    padding:12px 20px;
-
-    border-radius:12px;
-
     cursor:pointer;
-
-    font-size:15px;
-    font-weight:600;
 
     transition:0.3s;
 }
@@ -116,6 +111,13 @@
 .add-btn{
     background:#3D52A0;
     color:white;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-size:15px;
+    font-weight:600;
 }
 
 .add-btn:hover{
@@ -125,25 +127,22 @@
 .cancel-btn{
     background:#D9E2F2;
     color:#3D52A0;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    font-size:15px;
+    font-weight:600;
 }
 
 .cancel-btn:hover{
     background:#C5D3EB;
 }
 
-.delete-btn{
-    background:#ff5c5c;
-    color:white;
-}
-
-.delete-btn:hover{
-    background:#e04848;
-}
-
-.task-list-placeholder{
+.task-list{
     display:flex;
     flex-direction:column;
-
     gap:18px;
 }
 
@@ -152,7 +151,7 @@
 
     padding:22px;
 
-    border-radius:18px;
+    border-radius:20px;
 
     box-shadow:0 4px 16px rgba(0,0,0,0.08);
 
@@ -177,15 +176,58 @@
     align-items:center;
 }
 
-.task-card-top h3{
+.task-left-section{
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+}
+
+.task-left-section h3{
     color:#3D52A0;
+    font-size:20px;
+}
+
+.complete-btn{
+    height:32px;
+    width:32px;
+
+    border-radius:50%;
+
+    background:#D9E2F2;
+
+    color:#3D52A0;
+
+    font-weight:bold;
+}
+
+.done-btn{
+    background:#4CAF50;
+    color:white;
+}
+
+.delete-btn{
+    background:#ff5c5c;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+.delete-btn:hover{
+    background:#e04848;
 }
 
 .task-details{
     display:flex;
-    flex-direction:column;
+    gap:30px;
 
-    gap:8px;
+    flex-wrap:wrap;
 }
 
 .task-details p{
@@ -195,4 +237,28 @@
 .task-details span{
     color:#3D52A0;
     font-weight:600;
+}
+
+.completed-task{
+    opacity:0.75;
+}
+
+.completed-task h3{
+    text-decoration:line-through;
+}
+
+.empty-task{
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    color:#7091E6;
+
+    font-size:18px;
+
+    box-shadow:0 4px 16px rgba(0,0,0,0.08);
 }

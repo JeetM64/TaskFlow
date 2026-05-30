@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Sidebar.css'
 
 const Sidebar = () => {
@@ -12,21 +13,21 @@ const Sidebar = () => {
           Workspace
         </h3>
 
-        <a className='active-item' href='#'>
+        <NavLink to='/dashboard' className={({ isActive }) => isActive ? 'active-item' : ''}>
           Dashboard
-        </a>
+        </NavLink>
 
-        <a href='#'>
+        <NavLink to='/tasks' className={({ isActive }) => isActive ? 'active-item' : ''}>
           Tasks
-        </a>
+        </NavLink>
 
-        <a href='#'>
+        <NavLink to='/notes' className={({ isActive }) => isActive ? 'active-item' : ''}>
           Notes
-        </a>
+        </NavLink>
 
-        <a href='#'>
+        <NavLink to='/analytics' className={({ isActive }) => isActive ? 'active-item' : ''}>
           Analytics
-        </a>
+        </NavLink>
 
       </div>
 

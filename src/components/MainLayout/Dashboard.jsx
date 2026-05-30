@@ -41,6 +41,26 @@ const Dashboard = () => {
     setTasks(updatedTasks)
   }
 
+  function handleCompleteTask(id){
+
+    const updatedTasks = tasks.map((task) => {
+
+      if(task.id === id){
+
+        return{
+          ...task,
+          completed: !task.completed
+        }
+
+      }
+
+      return task
+
+    })
+
+    setTasks(updatedTasks)
+  }
+
   return (
 
     <div className='dashboard'>
@@ -107,16 +127,40 @@ const Dashboard = () => {
           </div>
         }
 
-        <div className='task-list-placeholder'>
+        <div className='task-list'>
 
           {
+            tasks.length === 0 ?
+
+            <div className='empty-task'>
+              No Tasks Added Yet
+            </div>
+
+            :
+
             tasks.map((task) => (
 
-              <div className='task-card' key={task.id}>
+              <div 
+                className={`task-card ${task.completed ? 'completed-task' : ''}`}
+                key={task.id}
+              >
 
                 <div className='task-card-top'>
 
-                  <h3>{task.title}</h3>
+                  <div className='task-left-section'>
+
+                    <button
+                      className={`complete-btn ${task.completed ? 'done-btn' : ''}`}
+                      onClick={() => handleCompleteTask(task.id)}
+                    >
+                      ✓
+                    </button>
+
+                    <h3>
+                      {task.title}
+                    </h3>
+
+                  </div>
 
                   <button
                     className='delete-btn'
@@ -130,7 +174,7 @@ const Dashboard = () => {
                 <div className='task-details'>
 
                   <p>
-                    Created At:
+                    Created:
                     <span> {task.createdAt} </span>
                   </p>
 
@@ -154,5 +198,4 @@ const Dashboard = () => {
 
   )
 }
-
-export default Dashboard
+export default Dashboard;

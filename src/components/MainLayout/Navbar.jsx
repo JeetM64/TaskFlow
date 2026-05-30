@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -20,10 +21,18 @@ const Navbar = () => {
       </div>
 
       <div className='navbar-right'>
-        <a className='active-link' href='#'>Home</a>
-        <a href='#'>Tasks</a>
-        <a href='#'>Notes</a>
-        <a href='#'>Analytics</a>
+        <NavLink to='/dashboard' className={({ isActive }) => isActive ? 'active-link' : ''}>
+          Home
+        </NavLink>
+        <NavLink to='/tasks' className={({ isActive }) => isActive ? 'active-link' : ''}>
+          Tasks
+        </NavLink>
+        <NavLink to='/notes' className={({ isActive }) => isActive ? 'active-link' : ''}>
+          Notes
+        </NavLink>
+        <NavLink to='/analytics' className={({ isActive }) => isActive ? 'active-link' : ''}>
+          Analytics
+        </NavLink>
       </div>
 
     </nav>
