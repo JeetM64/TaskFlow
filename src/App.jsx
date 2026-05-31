@@ -8,6 +8,8 @@ import TasksPage from './pages/TasksPage.jsx'
 import NotesPage from './pages/NotesPage.jsx'
 import AnalyticsPage from './pages/AnalyticsPage.jsx'
 
+import ProfilePage from './pages/ProfilePage.jsx'
+
 import './App.css'
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
               <Route path='/notes' element={<NotesPage />} />
               <Route path='/analytics' element={<AnalyticsPage />} />
               <Route path='*' element={<Navigate to='/dashboard' replace />} />
+              <Route path='/profile' element = {<ProfilePage/>}/>
             </Routes>
           </main>
 

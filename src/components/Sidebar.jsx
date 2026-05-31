@@ -37,9 +37,12 @@ const Sidebar = () => {
           Settings
         </a>
 
-        <a href='#'>
+
+        <NavLink to='/profile' className ={({isActive}) => isActive ? 'active-item': ''}>
           Profile
-        </a>
+        </NavLink>
+
+
 
       </div>
 
