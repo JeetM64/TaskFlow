@@ -20,8 +20,8 @@ export const profileSchema = z.object({
            .min(1,"should be at least 1 hr")
            .max(24,"should be less than 24 hr")
 
-    .refine((data) => data.password === data.confirmPassword, {
+})
+.refine((data) => data.password === data.confirmPassword, {
         message: "Passwords do not match",
         path: ["confirmPassword"]
     })
-});
