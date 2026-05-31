@@ -20,6 +20,16 @@
     gap: 15px;
 }
 
+.parent label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: #444;
+    font-weight: 600;
+}
+
+.parent select,
 .parent input {
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -27,9 +37,17 @@
     font-size: 14px;
     font-family: Arial, sans-serif;
     transition: border-color 0.3s ease;
+    background: white;
 }
 
-.parent input:focus {
+.parent select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.parent input:focus,
+.parent select:focus {
     outline: none;
     border-color: #4CAF50;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
