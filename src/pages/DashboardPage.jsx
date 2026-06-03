@@ -1,20 +1,23 @@
-
-
+import { useSelector } from 'react-redux'
+import { useDispatch} from "react-redux";
+import { addTask, removeTask, toggleCompleted } from "../../redux/slices/tasksSlice"
 
 import React, { useEffect, useState } from 'react'
 
 const DashboardPage = () => {
-  const [tasks, setTasks] = useState([])
+  // Get tasks from Redux store
+  const tasks = useSelector(
+    (state) => state.tasks.tasks
+  )
   const [notes, setNotes] = useState([])
+  const dispatch = useDispatch()
 
+  // Load notes from localStorage on mount
   useEffect(() => {
     try {
-      const storedTasks = window.localStorage.getItem('flowSyncTasks')
       const storedNotes = window.localStorage.getItem('flowSyncNotes')
-      setTasks(storedTasks ? JSON.parse(storedTasks) : [])
       setNotes(storedNotes ? JSON.parse(storedNotes) : [])
     } catch {
-      setTasks([])
       setNotes([])
     }
   }, [])
