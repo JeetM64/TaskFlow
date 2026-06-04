@@ -1,22 +1,23 @@
 
-
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const AnalyticsPage = () => {
-  const [tasks, setTasks] = useState([])
-  const [notes, setNotes] = useState([])
-
-  useEffect(() => {
+  const [tasks] = useState(() => {
     try {
       const storedTasks = window.localStorage.getItem('flowSyncTasks')
-      const storedNotes = window.localStorage.getItem('flowSyncNotes')
-      setTasks(storedTasks ? JSON.parse(storedTasks) : [])
-      setNotes(storedNotes ? JSON.parse(storedNotes) : [])
+      return storedTasks ? JSON.parse(storedTasks) : []
     } catch {
-      setTasks([])
-      setNotes([])
+      return []
     }
-  }, [])
+  })
+  const [notes] = useState(() => {
+    try {
+      const storedNotes = window.localStorage.getItem('flowSyncNotes')
+      return storedNotes ? JSON.parse(storedNotes) : []
+    } catch {
+      return []
+    }
+  })
 
   const completedTasks = tasks.filter((task) => task.completed).length
   const totalTasks = tasks.length

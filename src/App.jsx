@@ -11,15 +11,15 @@ import AnalyticsPage from './pages/AnalyticsPage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
 
 
-import {provider} from 'reacr-redux';
-import {store} from './redux/store.js';
+import { Provider } from 'react-redux';
+import { store } from './redux/store.js';
 
 import './App.css'
 
 function App() {
 
   return (
-    <provider store = {store}>
+    <Provider store={store}>
     <BrowserRouter>
 
       <div className='container'>
@@ -47,7 +47,7 @@ function App() {
       </div>
 
     </BrowserRouter>
-    </provider>
+    </Provider>
   )
 }
 
