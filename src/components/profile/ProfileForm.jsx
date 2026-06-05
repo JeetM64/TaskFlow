@@ -49,4 +49,4 @@ function ProfileForm() {
   )
 }
 
-export default ProfileForm
+export default ProfileForm;

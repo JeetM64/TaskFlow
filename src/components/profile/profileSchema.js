@@ -14,7 +14,7 @@ export const profileSchema = z.object({
           "Password must contain uppercase, lowercase and a number"
           ),
     confirmPassword : z.string()
-          .min(8,"Password should be minimum 8 character"),
+          .min(6,"Password should be minimum 6 character"),
     role : z.enum(["student","developer","designer","other"],{message : "Please select from the options"}) ,
     goalHours : z.coerce.number()
            .min(1,"should be at least 1 hr")
