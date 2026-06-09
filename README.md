@@ -1,15 +1,17 @@
-# React + Vite
+# TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend lives in [client](client) and the backend lives in [server](server).
 
-Currently, two official plugins are available:
+## Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+From the repo root:
 
-##REACT
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run dev` starts the Vite client using [client/index.html](client/index.html).
+- `npm run dev:server` starts the Express server from [server/index.js](server/index.js).
+- `npm run build` builds the client app.
 
-## Expanding the ESLint configuration
+## Layout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [client/src](client/src) contains the React app.
+- [client/public](client/public) contains static assets.
+- [server](server) contains the API/server code.
