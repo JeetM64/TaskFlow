@@ -10,7 +10,7 @@ From the repo root:
 - `npm run dev:server` starts the Express server from [server/index.js](server/index.js).
 - `npm run build` builds the client app.
 
-## Layout
+
 
 - [client/src](client/src) contains the React app.
 - [client/public](client/public) contains static assets.
