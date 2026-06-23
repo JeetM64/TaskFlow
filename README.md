@@ -4,7 +4,6 @@ Frontend lives in [client](client) and the backend lives in [server](server).
 
 ## Run
 
-From the repo root:
 
 - `npm run dev` starts the Vite client using [client/index.html](client/index.html).
 - `npm run dev:server` starts the Express server from [server/index.js](server/index.js).
