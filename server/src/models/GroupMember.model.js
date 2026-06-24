@@ -7,13 +7,11 @@ const groupMemberSchema = new mongoose.Schema(
       ref: "User",
       required: true
     },
-
     group: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Group",
       required: true
     },
-
     joinedAt: {
       type: Date,
       default: Date.now
